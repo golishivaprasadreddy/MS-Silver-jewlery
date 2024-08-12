@@ -1,0 +1,130 @@
+
+<head>
+    <title>PRODUCTS</title><link rel="stylesheet" href="CSS/products.css">
+
+</head>
+
+<body>
+    <div class="background">
+        <div class="back-img">
+            <img src="images/background.jpg" alt="">
+        </div>
+       
+    </div>
+    <div class="navi">
+        <div class="navbar" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="left-img" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                <a href="index">
+                    <img src="images/logof.jpg" alt="logo" style="max-width: 100%; height: auto; width: auto; max-height: 60px;">
+                </a>
+            </div>
+            <div class="right">
+                <ul>
+                    <a href="/">
+                        <li>HOME</li>
+                    </a>
+                   
+                    </a>
+                    <a href="products">
+                        <li style="color:rgb(226, 183, 65)">PRODUCTS</li>
+                    </a>
+                    <a href="contact">
+                        <li>CONTACT</li>
+                    </a>
+                    <a href="about">
+                        <li>ABOUT US</li>
+                    </a>
+                    <a href="admin">
+                        <li>ADMIN</li>
+                    </a>
+
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <div class="top-button">
+        <a href="#">
+            <div class="upward-top-button" title="Go To Top">
+                <p>^</p>
+            </div>
+        </a>
+    </div>
+    <div class="main-container">
+        <div class="main-section">
+            <div class="heading-txt">All Products</div>
+            <div class="search-result-txt">
+                <p>Showing all results</p>
+            </div>
+            <% products.forEach((product) => { %>
+                <div class="product-section">
+                    <div class="first-sec-whole">
+                        
+                            <div class="over-txt"><p style="font-size: small;"><%= product.name %>
+                                <br>
+                                Description: <%= product.description %>  <br>
+                                Price: ₹<%= product.price %>  <br>
+                                Type: <%= product.type %></p></div>
+                            <img class="img1" src="./uploads/<%= product.image %>" alt="">
+                           
+                    
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="foot">
+        <div class="about-us">
+            <div class="foot-head">ABOUT US</div>
+            <div class="about-us-body"  >Since 1906, DIVA has been the must-peruse news hotspot for shrewd
+                gems experts. From market investigation to developing gems patterns, we cover the critical business
+                subjects fundamental to the regular accomplishment of adornments experts around the world.</div>
+        </div>
+        <div class="hori-line"></div>
+        <div class="follow-us">
+            <div class="foot-head">FOLLOW US</div>
+            <div class="foot-div-body" >
+                <ul>
+                    <li><a href="#" >SPRING COLLECTION</a></li>
+                    <li><a href="#" >TRENDING</a></li>
+                    <li><a href="#" >BEST SELERS</a></li>
+                    <li><a href="#" >DISCOUNT VOWCHER</a></li>
+                    <li><a href="#" >NEW ARRIVAL</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hori-line"></div>
+        <div class="whats-hot">
+            <div class="foot-head" >WHATS HOT</div>
+            <div class="foot-div-body" >
+                <ul>
+                    <li><a href="#" >SPRING COLLECTION</a></li>
+                    <li><a href="#" >TRENDING</a></li>
+                    <li><a href="#" >BEST SELERS</a></li>
+                    <li><a href="#" >DISCOUNT VOWCHER</a></li>
+                    <li><a href="#" >NEW ARRIVAL</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hori-line"></div>
+        <div class="company">
+            <div class="foot-head">WHATS HOT</div>
+            <div class="foot-div-body">
+                <ul>
+                    <li><a href="#" >SPRING COLLECTION</a></li>
+                    <li><a href="#" >TRENDING</a></li>
+                    <li><a href="#" >BEST SELERS</a></li>
+                    <li><a href="#" >DISCOUNT VOWCHER</a></li>
+                    <li><a href="#">NEW ARRIVAL</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right">
+        <div class="copy-right-txt" >
+            <p>Copyright &#169; All Rights Reserved</p>
+        </div>
+</footer>
+
+</html>

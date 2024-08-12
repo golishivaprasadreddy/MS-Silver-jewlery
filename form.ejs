@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/create" method="POST">
+        <input type="text" name="names" placeholder="enter ur name" >
+        <input type="textarea" name="nae23" placeholder="enter ur address" >
+        <input type="submit" value="submit"> 
+    </form>
+    <div class="form-group"> 
+        <p>Name: <%= body.names %></p>
+        <p>Address: <%= body.nae23 %></p>
+    </div>
+</body >
+</html>
