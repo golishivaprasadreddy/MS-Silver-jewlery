@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/Msjewellery', {
+mongoose.connect('mongodb+srv://gspreddy6869:66ylLj6C4IyFiviq@ms-jewllery.hbzzq.mongodb.net/?retryWrites=true&w=majority&appName=Ms-jewllery', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
