@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://gspreddy6869:66ylLj6C4IyFiviq@ms-jewllery.hbzzq.mongodb.net/?retryWrites=true&w=majority&appName=Ms-jewllery', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000, // Increase this value
+    socketTimeoutMS: 45000, // Increase this value
 })
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('Could not connect to MongoDB...', err));

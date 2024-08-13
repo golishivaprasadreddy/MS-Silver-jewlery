@@ -3,7 +3,7 @@ const path = require('path');
 const Product = require('./usermodel'); // Import the Product model
 const bodyParser = require('body-parser');
 const multer = require('multer');
-
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -69,7 +69,7 @@ app.post('/create', upload.single('image'), async (req, res) => {
     }
 });
 
-const port = 3000;
+
 app.listen(port, function (err) {
     if (err) {
         console.error('Failed to start the server:', err);
