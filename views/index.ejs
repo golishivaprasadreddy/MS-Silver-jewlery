@@ -1,77 +1,231 @@
-const express = require('express');
-const path = require('path');
-const Product = require('./usermodel'); // Import the Product model
-const bodyParser = require('body-parser');
-const multer = require('multer');
-const multerStorageCloudinary = require('multer-storage-cloudinary');
-const cloudinary = require('./config/cloudinary'); // Import Cloudinary configuration
-const port = process.env.PORT || 3000;
-const app = express();
+<html>
 
-app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+<head>
+	<title>Home</title>
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
 
-app.get('/', function (req, res) {
-    res.render("index");
-});
+<body>
+    <div class="background">
+        <div class="back-img">
+            <img src="images/background.jpg" alt="">
+        </div>
+        <div class="back-overlay">
+        </div>
+    </div>
+    <div class="navi">
+        <div class="navbar" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="left-img" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                <a href="index">
+                    <img src="images/logof.jpg" alt="logo" style="max-width: 100%; height: auto; width: auto; max-height: 60px;">
+                </a>
+            </div>
+            <div class="right">
+                <ul>
+                    <a href="/">
+                        <li style="color:rgb(226, 183, 65)">HOME</li>
+                    </a>
+                  
+                    </a>
+                    <a href="products">
+                        <li>PRODUCTS</li>
+                    </a>
+                    <a href="contact">
+                        <li>CONTACT</li>
+                    </a>
+                    <a href="about">
+                        <li >ABOUT US</li>
+                    </a>
+                    <a href="admin">
+                        <li>ADMIN</li>
+                    </a>
+                </ul>
+            </div>
+            
+        </div>
+    <div class="top-button">
+        <a href="#">
+            <div class="upward-top-button" title="Go To Top">
+                <p>^</p>
+            </div>
+        </a>
+    </div>
+    <div class="main-container">
+        <div class="banner-main">
+            <div class="banner-picture">
+                <img src="images/banner1.jpg" alt="">
+            </div>
+            <div class="over"></div>
+            <div class="txt-btn">
+                <div class="banner-text">
+                    <p style="font-size: 25;">EARINGS</p>
+                    <p style="font-size: 45;">New Design from</p>
+                    <div class="ighj" style="margin-top: 2px;"><img src="images/logof2.jpg" alt="" height="70px" width="100px"></div>
+                </div>
+                <div class="banner-btn">
+                    <a href="/"><input class="btn-1 btn" type="button" value="SHOP NOW"></a>
+                </div>
+            </div>
+        </div>
+        <div class="galery">
+            <div class="fst">
 
-app.get('/contact', function (req, res) {
-    res.render("contact");
-});
+                <div class="fst-1">
+                    <div class="fst-1-txt"><a style="color: rgb(255, 255, 255);" href="/">NECKLACES</a></div>
+                    <div class="borders-left"></div>
+                    <div class="borders-right"></div>
+                    <div class="borders-top"></div>
+                    <div class="borders-bottom"></div>
 
-app.get('/admin', function (req, res) {
-    res.render("admin");
-});
+                    <div class="i-33">
+                    </div>
+                </div>
 
-app.get('/about', function (req, res) {
-    res.render("about");
-});
+                <div class="fst-2">
+                    <div class="fst-2-txt"><a style="color: rgb(255, 255, 255);" href="/">RINGS</a></div>
+                    <div class="borders2-right"></div>
+                    <div class="borders2-left"></div>
+                    <div class="borders2-top"></div>
+                    <div class="borders2-bottom"></div>
+                    <div class="i-35">
+                    </div>
+                </div>
+            </div>
 
-app.get('/products', async (req, res) => {
-    try {
-        const products = await Product.find(); // Fetch all products
-        res.render('products', { products }); // Pass products to EJS
-    } catch (error) {
-        console.error('Error fetching products:', error);
-        res.status(500).send('Error fetching products');
-    }
-});
+            <div class="sec">
+                <div class="sec-1">
+                    <div class="sec-1-txt"><a style="color: rgb(255, 255, 255);" href="/">BRACELETS</a></div>
+                    <div class="borders-right"></div>
+                    <div class="borders-left"></div>
+                    <div class="borders-top"></div>
+                    <div class="borders-bottom"></div>
+                    <div class="a-1">
+                    </div>
+                </div>
 
-// Cloudinary storage configuration
-const storage = multerStorageCloudinary({
-    cloudinary: cloudinary,
-    folder: 'products',
-    allowedFormats: ['jpg', 'jpeg', 'png']
-});
+                <div class="sec-2">
+                    <div class="sec-2-txt"><a style="color: rgb(255, 255, 255);" href="/">GOLD JHUMKA</a></div>
+                    <div class="borders-right-bd2" id="bd2"></div>
+                    <div class="borders-left" id="bd2"></div>
+                    <div class="borders-top" id="bd2"></div>
+                    <div class="borders-bottom" id="bd2"></div>
+                    <div class="i-38">
+                    </div>
+                </div>
+                <div class="sec-3">
+                    <div class="sec-3-txt"><a style="color: rgb(255, 255, 255);" href="/">NECKLACES</a></div>
+                    <div class="borders-right-bd3" id="bd3"></div>
+                    <div class="borders-left" id="bd3"></div>
+                    <div class="borders-top" id="bd3"></div>
+                    <div class="borders-bottom" id="bd3"></div>
+                    <div class="i-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="txt-sec">
+            <div class="txt-sec-text">
+                <div class="txt-heading">Diamond Nexus</div>
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="txt-txt">
+                    <p>Massive Dynamic has over 10 years of experience in Design. We take pride in delivering
+                        Intelligent Designs and Engaging Experiences for clients all over the World. I thrive on problem
+                        solving and working with clients to seek out the best possible design solution.</p>
+                </div>
+                <div class="txt-button">
+                    <a href="#"><input type="button" value="Read More"></a>
+                </div>
+            </div>
+            <div class="txt-back-img">
+            </div>
+        </div>
+        <div class="thrd-sec">
+            <div class="thrd">
 
-const upload = multer({ storage });
+                <div class="thrd-1">
+                    <div class="thrd-1-txt"><a style="color: rgb(0, 0, 0);" href="/">NECKLACE SET</a></div>
+                    <div class="thrd-borders-right"></div>
+                    <div class="thrd-borders-left"></div>
+                    <div class="thrd-borders-top"></div>
+                    <div class="thrd-borders-bottom"></div>
+                    <div class="txt-overlay"></div>
+                    <div class="i-4">
+                    </div>
+                </div>
 
-app.post('/create', upload.single('image'), async (req, res) => {
-    const { name, description, price, type } = req.body;
-    const image = req.file ? req.file.path : ''; // Cloudinary returns the file URL
+                <div class="thrd-2">
+                    <div class="thrd-2-txt"><a style="color: rgb(255, 255, 255);" href="contact">STORY</a></div>
+                    <div class="thrd-borders2-left"></div>
+                    <div class="thrd-borders2-bottom"></div>
+                    <div class="thrd-borders2-top"></div>
+                    <div class="thrd-borders2-right"></div>
+                    <div class="txt-overlay2" style="height: 65%;
+                    position: absolute;
+                    width: 330px;
+                    background-color: rgba(0, 0, 0, 0.3);
+                    "></div>
+                    <div class="i-7">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="foot">
+        <div class="about-us">
+            <div class="foot-head">ABOUT US</div>
+            <div class="about-us-body">Since 1906, DIVA has been the must-peruse news hotspot for shrewd
+                gems experts. From market investigation to developing gems patterns, we cover the critical business
+                subjects fundamental to the regular accomplishment of adornments experts around the world.</div>
+        </div>
+        <div class="hori-line"></div>
+        <div class="follow-us">
+            <div class="foot-head">FOLLOW US</div>
+            <div class="foot-div-body">
+                <ul>
+                    <li><a href="#">SPRING COLLECTION</a></li>
+                    <li><a href="#">TRENDING</a></li>
+                    <li><a href="#">BEST SELERS</a></li>
+                    <li><a href="#">DISCOUNT VOWCHER</a></li>
+                    <li><a href="#">NEW ARRIVAL</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hori-line"></div>
+        <div class="whats-hot">
+            <div class="foot-head">WHATS HOT</div>
+            <div class="foot-div-body">
+                <ul>
+                    <li><a href="#">SPRING COLLECTION</a></li>
+                    <li><a href="#">TRENDING</a></li>
+                    <li><a href="#">BEST SELERS</a></li>
+                    <li><a href="#">DISCOUNT VOWCHER</a></li>
+                    <li><a href="#">NEW ARRIVAL</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hori-line"></div>
+        <div class="company">
+            <div class="foot-head">WHATS HOT</div>
+            <div class="foot-div-body">
+                <ul>
+                    <li><a href="#">SPRING COLLECTION</a></li>
+                    <li><a href="#">TRENDING</a></li>
+                    <li><a href="#">BEST SELERS</a></li>
+                    <li><a href="#">DISCOUNT VOWCHER</a></li>
+                    <li><a href="#">NEW ARRIVAL</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copy-right">
+    <div class="copy-right-txt">
+        <p>Copyright &#169; All Rights Reserved</p>
+    </div>
+</div>
 
-    try {
-        const product = new Product({
-            name,
-            description,
-            price,
-            type,
-            image
-        });
-        await product.save();
-        res.send('Product created successfully!');
-    } catch (error) {
-        console.error('Error creating product:', error); // Log the error details
-        res.status(500).send('Error creating product');
-    }
-});
-
-app.listen(port, function (err) {
-    if (err) {
-        console.error('Failed to start the server:', err);
-    } else {
-        console.log(`Server is running on http://localhost:${port}`);
-    }
-});
+</html>
