@@ -145,9 +145,10 @@
         .main-container {
             /* background-color: white; */
             background-image: linear-gradient(100deg, rgb(255, 249, 225), rgb(255, 255, 255));
-            width: 86%;
+            width: 100%;
             z-index: -50;
-            margin: auto;
+            margin-left: 10%;
+            margin-right: 10%;
             background-size: cover;
             background-repeat: no-repeat;
 
@@ -220,7 +221,7 @@
             padding: 0 0 30 0;
         }
         .third-sec img{
-            height: 70%;            
+            height: 40%;          
             width: 100%;
             border-radius: 15px;
         }

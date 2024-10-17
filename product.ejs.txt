@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCTS</title>
+    <link rel="stylesheet" href="CSS/products.css">
+    
+</head>
+
+<body>
+
+    </div>
+    <div class="navi">
+        <div class="navbar" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="left-img" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                <a href="index">
+                    <img src="images/logof.jpg" alt="logo"
+                        style="max-width: 100%; height: auto; width: auto; max-height: 60px;">
+                </a>
+            </div>
+            <div class="right">
+                <ul style="list-style: none; display: flex; gap: 20px; color: aliceblue;">
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="products" style="color:rgb(226, 183, 65)">PRODUCTS</a></li>
+                    <li><a href="contact">CONTACT</a></li>
+                    <li><a href="about">ABOUT US</a></li>
+                    <li><a href="admin">ADMIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-button">
+        <a href="#">
+            <div class="upward-top-button" title="Go To Top">
+                <p>^</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="main-container">
+        <div class="main-section">
+            <div class="heading-txt">All Products</div>
+            <div class="search-result-txt">
+                <p>Showing all results</p>
+            </div>
+            <div class="product-section">
+                <% products.forEach((product, index)=> { %>
+                    <% if (index % 4===0) { %>
+                        <div class="product-row">
+                            <% } %>
+
+                                <div class="product-item">
+                                    <img class="img1" src="./uploads/<%= product.image %>" alt="Product Image">
+                                    <div class="over-txt">
+                                        <p style="font-size: small;">
+                                            <%= product.name %><br>
+                                                Description: <%= product.description %><br>
+                                                    Price: ₹<%= product.price %><br>
+                                                        Type: <%= product.type %>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <% if ((index + 1) % 4===0 || index===products.length - 1) { %>
+                        </div>
+                        <% } %>
+                            <% }); %>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot">
+            <div class="about-us">
+                <div class="foot-head">ABOUT US</div>
+                <div class="about-us-body">Since 1906, DIVA has been the must-read news source for savvy jewelry
+                    professionals. From market analysis to emerging jewelry trends, we cover the critical business
+                    topics essential to the everyday success of jewelry professionals worldwide.</div>
+            </div>
+            <div class="hori-line"></div>
+            <div class="follow-us">
+                <div class="foot-head">FOLLOW US</div>
+                <div class="foot-div-body">
+                    <ul style="list-style: none;">
+                        <li><a href="#">SPRING COLLECTION</a></li>
+                        <li><a href="#">TRENDING</a></li>
+                        <li><a href="#">BEST SELLERS</a></li>
+                        <li><a href="#">DISCOUNT VOUCHER</a></li>
+                        <li><a href="#">NEW ARRIVAL</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hori-line"></div>
+            <div class="whats-hot">
+                <div class="foot-head">WHAT'S HOT</div>
+                <div class="foot-div-body">
+                    <ul style="list-style: none;">
+                        <li><a href="#">SPRING COLLECTION</a></li>
+                        <li><a href="#">TRENDING</a></li>
+                        <li><a href="#">BEST SELLERS</a></li>
+                        <li><a href="#">DISCOUNT VOUCHER</a></li>
+                        <li><a href="#">NEW ARRIVAL</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="hori-line"></div>
+            <div class="company">
+                <div class="foot-head">COMPANY</div>
+                <div class="foot-div-body">
+                    <ul style="list-style: none;">
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">CAREERS</a></li>
+                        <li><a href="#">PRESS</a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            <div class="copy-right-txt">
+                <p>&#169; 2024 All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+================================================================================================================
+
+
+/* Reset CSS */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    background-color: #0f0e0e;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Background Image and Overlay */
+.background {
+    position: relative;
+}
+
+.back-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.back-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(242, 240, 240);
+}
+
+.btn {
+    cursor: pointer;
+}
+
+/* Navigation Bar */
+.navi {
+    background-color: black;
+    width: 86%;
+    margin: auto;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.left-img {
+    width: 15%;
+}
+
+.right {
+    width: 77%;
+    text-align: right;
+}
+
+.right ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.right ul a li {
+    list-style: none;
+    color: rgb(255, 249, 249);
+    transition: 0.5s;
+}
+
+.right ul a li:hover {
+    color: #e2b741;
+    border-bottom: 1px solid #e2b741;
+}
+
+/* Scroll to Top Button */
+.upward-top-button {
+    background-color: #E2B741;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 10px;
+    right: 21px;
+}
+
+.upward-top-button p {
+    padding-top: 10px;
+}
+
+.top-button a {
+    text-decoration: none;
+    color: rgb(143, 103, 103);
+}
+
+/* Main Container */
+.main-container {
+    background-color: white;
+    width: 86%;
+    margin: auto;
+    flex: 1; /* Flex-grow to take up remaining space */
+}
+
+.main-section {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+/* Heading Text */
+.heading-txt {
+    font-size: 50px;
+    padding: 20px 0;
+}
+
+.search-result-txt p {
+    font-size: 16px;
+}
+
+/* Product Section */
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 12px 0;
+    gap: 10px;
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    max-width: calc(25% - 20px); /* Ensures that the item doesn't exceed the allocated space */
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img.img1 {
+    max-width: 100%;
+    height: auto; /* Let the image scale proportionally */
+    object-fit: contain;
+}
+
+.over-txt {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+    background: #fff;
+    position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+/* Footer Section */
+.foot {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 86%;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-us, .follow-us, .whats-hot, .company {
+    width: 20%;
+    color: rgb(168, 168, 168);
+}
+
+.about-us-body {
+    font-size: 15px;
+}
+
+.foot-div-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.foot-div-body ul li {
+    padding: 12px 0;
+}
+
+.foot-div-body ul li a {
+    color: rgb(110, 109, 109);
+    text-decoration: none;
+}
+
+.foot-div-body ul li a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.hori-line {
+    width: 0;
+    height: 195px;
+    border-left: 1px solid rgb(7, 7, 7);
+}
+
+.foot-head {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.copy-right {
+    width: 86%;
+    margin: 20px auto 0;
+    text-align: center;
+    color: rgb(168, 168, 168);
+}
+
+.copy-right-txt {
+    padding: 50px 0 0 0;
+}
+
+
