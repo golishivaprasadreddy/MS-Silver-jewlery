@@ -195,7 +195,7 @@ a {
 .second-content {
     display: flex;
     padding: 5% 10% 0 10%;
-    height: 45%;
+    height: auto;
 }
 
 .sec-content-one,
@@ -330,11 +330,14 @@ a {
     .main-container {
         width: 90%;
     }
+.first-section{
+    height: 30%;
+}
 
     .first-gradirnt-layer,
     .first-texts {
-        width: 90%;
-        margin: 8% 0 0 5%;
+       
+       height: 20%;
     }
 
     .first-big-txt {
@@ -346,7 +349,7 @@ a {
     }
 
     .second-content {
-        flex-direction: column;
+        flex-direction: row;
     }
 }
 
@@ -422,5 +425,63 @@ a {
 
     .copy-right {
         width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .right ul a li {
+        display: block;
+        font-size: 16px;
+        margin: 8px 0;
+    }
+    .first-big-txt {
+        font-size: 24px;
+        text-align: center;
+    }
+    .second-content {
+        flex-direction: column;
+        padding: 5% 2%;
+    }
+}
+@media (max-width: 576px) {
+    .navbar {
+        padding: 5px;
+    }
+    .left-img {
+        width: 30%;
+    }
+    .first-big-txt {
+        font-size: 20px;
+    }
+    .first-big-button input {
+        width: 180px;
+        padding: 10px;
+    }
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    .first-big-txt {
+        font-size: 18px;
+    }
+    .first-big-button input {
+        width: 150px;
+        padding: 8px;
+    }
+    .second-content {
+        padding: 0;
+    }
+    .footer-section {
+        text-align: center;
+        font-size: 14px;
+    }
+    .copy-right {
+        font-size: 12px;
     }
 }

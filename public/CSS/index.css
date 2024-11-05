@@ -1,6 +1,9 @@
 html {
     scroll-behavior: smooth;
 }
+.main-container, .navi, .banner-main {
+    width: 80%; /* Adjusted to a lower percentage to provide better margins */
+}
 
 * {
     margin: 0;
@@ -123,7 +126,7 @@ a {
 }
 
 .banner-main .banner-picture img {
-    width: 100%;
+    width: 86%;
     transition: 1s ease;
     height: 110%;
     overflow: hidden;
@@ -1080,3 +1083,12 @@ a {
 }
 
 /*SCROLL TO TOP BUTTON CSS END*/
+@media (max-width: 767px) and (min-width: 480px) {
+    banner-main .banner-picture img {
+        width: 86%;
+        transition: 1s ease;
+        height: 40%;
+        overflow: hidden;
+        z-index: -45;
+    }
+  }
