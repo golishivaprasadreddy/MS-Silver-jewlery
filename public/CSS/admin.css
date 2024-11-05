@@ -1,0 +1,157 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #c0bebe;
+}
+
+.left-img img {
+    max-height: 50px;
+}
+
+.right ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.right ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.right ul li a:hover {
+    color: rgb(226, 183, 65); /* Highlight color */
+}
+
+/* Container for form */
+.container {
+    max-width: 600px;
+    margin: 50px auto; /* Center the container */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: rgb(226, 183, 65); /* Header color */
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    background-color: rgb(226, 183, 65);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #b68a2b; /* Darker shade on hover */
+}
+
+/* Footer styling */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    background-color: #c0bebe;
+}
+
+.copy-right-txt {
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: flex-start; /* Align items to start */
+    }
+
+    .right ul {
+        flex-direction: column; /* Stack menu items vertically on mobile */
+        display: none; /* Hide by default */
+        width: 100%;
+    }
+
+    .right ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon */
+        font-size: 24px;
+        cursor: pointer;
+        margin-top: 10px; /* Space above hamburger */
+    }
+
+    .container {
+        margin: 20px; /* Adjust margin on mobile */
+        padding: 15px; /* Adjust padding on mobile */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust heading size on mobile */
+    }
+
+    input[type="submit"] {
+        font-size: 14px; /* Adjust button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px; /* Adjust navbar padding for small screens */
+    }
+
+    .right ul {
+        font-size: 14px; /* Smaller font size for mobile menu */
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        font-size: 14px; /* Adjust font size for input fields */
+    }
+
+    input[type="submit"] {
+        padding: 8px; /* Adjust button padding for smaller screens */
+    }
+}

@@ -4,6 +4,9 @@ body, h1, p, ul, li {
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    overflow-x: hidden;
+}
 
 /* Body and Background */
 body {
@@ -13,6 +16,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    /* Prevents horizontal scroll */
+    
+    
 }
 
 footer {
@@ -64,7 +70,7 @@ a {
     display: flex;
     padding: 15px 0;
     background-color: rgba(0, 0, 0, 0.1);
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -314,10 +320,15 @@ a {
         max-width: calc(50% - 20px); /* 2 items per row */
     }
 
-    .navi, .foot, .main-container {
-        width: 95%;
-    }
+    .navi, .foot, {
+        width: 90%;
 
+    }
+    .main-container {
+    
+        width: 100%;
+        align-items: center; 
+    }
     .navbar {
         flex-direction: column;
     }

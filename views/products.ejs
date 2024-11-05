@@ -3,23 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PRODUCTS</title>
     <link rel="stylesheet" href="CSS/products.css">
     <style>
         /* Navbar styling */
-       /* Navbar styling */
-.navbar {
-    display: flex; /* Use flexbox to align items in a row */
-    justify-content: space-between; /* Space between left-img and right */
-    align-items: center; /* Center align items vertically */
-    padding: 10px;
-    background-color: #c0bebe;
-    color: rgb(99, 43, 43);
-    height: 60px;
-    flex-direction:row; 
-}
+        html, body {
+            padding: 0;
+            margin: 0px;
+        }
 
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background-color: #c0bebe;
+            color: rgb(99, 43, 43);
+            height: 60px;
+            flex-direction: row;
+        }
 
         .left-img {
             display: flex;
@@ -30,7 +34,6 @@
         .left-img img {
             max-height: 40px;
             width: fit-content;
-            
         }
 
         .right {
@@ -42,7 +45,6 @@
         .right ul {
             list-style: none;
             display: flex;
-           
             gap: 20px;
             margin: 0;
             padding: 0;
@@ -54,32 +56,184 @@
         }
 
         .hamburger {
-            display: none; /* Hidden by default */
+            display: none;
             font-size: 24px;
             cursor: pointer;
-            margin-left: 20px; /* Space between hamburger and menu */
+            margin-left: 20px;
         }
 
         /* Responsive styling */
         @media (max-width: 768px) {
             .right ul {
-                display: none; /* Hide menu by default */
+                display: none;
                 flex-direction: column;
+                align-items: center; 
                 position: absolute;
-                top: 60px; /* Position below navbar */
+                top: 60px;
                 right: 0;
                 background-color: #333;
                 width: 100%;
             }
 
             .right ul.active {
-                display: flex; /* Show menu when active */
+                display: flex;
             }
 
             .hamburger {
-                display: block; /* Show hamburger icon */
+                display: block;
             }
         }
+
+        .main-container {
+            padding: 20px;
+        }
+
+        .product-section {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            gap: 20px; /* Adds space between items */
+            justify-content: space-between; /* Space items evenly */
+        }
+
+        .product-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            box-sizing: border-box; /* Ensures padding and border are included in width */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        .product-item img {
+            width: 100%; /* Makes the image responsive */
+            height: auto; /* Keeps aspect ratio */
+            border-radius: 8px; /* Optional: for rounded corners */
+        }
+
+        .over-txt {
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .foot-head {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .copy-right {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Responsive adjustments for product items */
+        @media (min-width: 1200px) {
+            .product-item {
+                width: calc(25% - 20px); /* 4 items per row */
+            }
+        }
+
+        @media (max-width: 1199px) and (min-width: 992px) {
+            .product-item {
+                width: calc(33.33% - 20px); /* 3 items per row */
+            }
+        }
+
+        @media (max-width: 991px) and (min-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px); /* 2 items per row */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .product-item {
+                width: calc(100% - 20px); /* 1 item per row */
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+        }
+
+        .modal-content {
+    margin: 5% auto; /* Center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Maximum width of modal */
+    background-color: white; /* Background of the modal */
+    border-radius: 8px; /* Rounded corners */
+    text-align: left; /* Align text to the left */
+}
+
+/* Adding padding specifically for modal elements */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal-details {
+    margin-bottom: 20px;
+    padding: 10px 0; /* Adding padding for separation */
+}
+
+.modal-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    margin: 10px 0; /* Margin for space around price */
+}
+
+#modalDescription {
+    margin-bottom: 10px; /* Margin for space around description */
+}
+.close {
+    color: rgb(16, 15, 15); /* Change text color */
+    float: right; /* Position it to the right */
+    font-size: 28px; /* Size of the close icon */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove border */
+    //* Background color for the button (red) */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    padding: 10px 15px; /* Padding for button size */
+}
+
+.close:hover {
+    background-color: #817f7f; /* Darker red on hover */
+}
+
+
     </style>
 </head>
 
@@ -100,7 +254,7 @@
                 <li><a href="products" style="color: rgb(226, 183, 65)">PRODUCTS</a></li>
                 <li><a href="contact">CONTACT</a></li>
                 <li><a href="about">ABOUT US</a></li>
-                <li><a href="admin">ADMIN</a></li>
+                <li><a href="login">ADMIN</a></li>
             </ul>
         </div>
     </div>
@@ -120,38 +274,50 @@
                 <p>Showing all results</p>
             </div>
             <div class="product-section">
-                <% products.forEach((product, index) => { %>
-                    <% if (index % 4 === 0) { %>
-                        <div class="product-row">
-                    <% } %>
-
-                    <div class="product-item">
-                        <img class="img1" src="./uploads/<%= product.image %>" alt="Product Image">
-                        <div class="over-txt">
-                            <p style="font-size: small;">
-                                <%= product.name %><br>
-                                Description: <%= product.description %><br>
-                                Price: ₹<%= product.price %><br>
-                                Type: <%= product.type %>
-                            </p>
+                <% if (products && products.length > 0) { %>
+                    <% products.forEach((product) => { %>
+                        <div class="product-item" onclick="openModal('<%= product.image %>', '<%= product.name %>', '<%= product.description %>', '<%= product.price %>', '<%= product.type %>')">
+                            <img class="img1" src="<%= product.image %>" alt="Product Image">
+                            <div class="over-txt">
+                                <p style="font-size: small;">
+                                    <%= product.name %><br>
+                                    Description: <%= product.description %><br>
+                                    Price: ₹<%= product.price %><br>
+                                    Type: <%= product.type %>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No products available.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
 
-                    <% if ((index + 1) % 4 === 0 || index === products.length - 1) { %>
-                        </div>
-                    <% } %>
-                <% }); %>
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 class="modal-title" id="modalTitle"></h2>
+            </div>
+            <img id="modalImage" src="" alt="Product Image">
+            <div class="modal-details">
+                <p id="modalDescription"></p>
+                <p class="modal-price" id="modalPrice"></p>
+                <p id="modalType" style="font-weight: bold;"></p>
             </div>
         </div>
     </div>
 
     <footer>
         <div class="foot">
-            <div class="about-us">
-                <div class="foot-head">ABOUT US</div>
-                <div class="about-us-body">Since 1906, DIVA has been the must-read news source for savvy jewelry
-                    professionals. From market analysis to emerging jewelry trends, we cover the critical business
-                    topics essential to the everyday success of jewelry professionals worldwide.</div>
+            <div class="business">
+                <div class="foot-head">BUSINESS</div>
+                <div class="foot-div-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. 
+                    We strive to provide insights into essential topics for the everyday success of jewelry professionals worldwide.
+                </div>
             </div>
             <div class="hori-line"></div>
             <div class="follow-us">
@@ -199,12 +365,38 @@
             </div>
         </div>
     </footer>
-    
+
     <script>
         // JavaScript function to toggle the menu
         function toggleMenu() {
             const menu = document.querySelector('.right ul');
             menu.classList.toggle('active');
+        }
+
+        // Function to open the modal
+        function openModal(image, title, description, price, type) {
+            document.getElementById('modalImage').src = image;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalPrice').innerText = '₹' + price;
+            document.getElementById('modalType').innerText = type;
+
+            const modal = document.getElementById('myModal');
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('myModal');
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function (event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                closeModal();
+            }
         }
     </script>
 </body>
