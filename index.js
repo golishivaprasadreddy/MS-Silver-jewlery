@@ -7,7 +7,7 @@ const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('./config/cloudinary'); // Import your Cloudinary configuration
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // Use bcryptjs instead of bcrypt
 const session = require('express-session');
 
 const port = process.env.PORT || 3000;
@@ -19,8 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: 'your-secret-key', resave: false, saveUninitialized: true }));
-
-
 
 // Define routes
 app.get('/', (req, res) => {
