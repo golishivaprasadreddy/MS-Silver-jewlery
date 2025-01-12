@@ -1,0 +1,1 @@
+This is ejs application for ms silver jewellery
