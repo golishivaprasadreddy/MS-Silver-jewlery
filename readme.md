@@ -1,5 +1,5 @@
 
-This is ejs application for ms silver jewellery
+This is ejs application of ms silver jewellery
 ##
 **Preview**
 
